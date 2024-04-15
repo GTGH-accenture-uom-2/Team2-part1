@@ -1,0 +1,46 @@
+----Τα επικείμενα ραντεβού για κάθε εμβολιαστικό κέντρο----
+Vaccination center:VC123 reservations
+Kostas Papadopoulos has reservation for 01/06/24 10:40:00
+
+Vaccination center:VC756 reservations
+Leonidas Aggelidis has reservation for 11/06/24 10:40:00
+
+----Τις ελεύθερες χρονικές θυρίδες κάθε εμβολιαστικού κέντρου----
+Vaccination center:VC123 available timeslots
+Doctor's Axilleas Paraskevopoulos AMKA: 23456734502 timeslots: 
+05/06/24 10:40:00 is available +
+03/06/24 10:40:00 is available +
+04/06/24 10:40:00 is available +
+Doctor's Mihalis Stravelas AMKA: 23356534502 timeslots: 
+08/06/24 10:40:00 is available +
+10/06/24 10:40:00 is available +
+09/06/24 10:40:00 is available +
+
+Vaccination center:VC756 available timeslots
+Doctor's Parmenion Kampanidis AMKA: 56786734502 timeslots: 
+15/06/24 10:40:00 is available +
+14/06/24 10:40:00 is available +
+13/06/24 10:40:00 is available +
+Doctor's Sotiris Silalis AMKA: 79456734558 timeslots: 
+16/06/24 10:40:00 is available +
+17/06/24 10:40:00 is available +
+18/06/24 10:40:00 is available +
+
+----Τους εμβολιασμούς (ημερομηνία εμβολιασμού και ονοματεπώνυμο ασφαλισμένου) που πραγματοποίησε κάθε γιατρός, για όλους τους γιατρούς.----
+Doctor's Axilleas Paraskevopoulos AMKA: 23456734502 vaccinations:
+Eleni Avani at 02/06/24 10:40:00
+
+Doctor's Mihalis Stravelas AMKA: 23356534502 vaccinations:
+Ioanna Dagmati at 07/06/24 10:40:00
+Maria Davi at 06/06/24 10:40:00
+
+Doctor's Parmenion Kampanidis AMKA: 56786734502 vaccinations:
+Giorgos Eugenidis at 12/06/24 10:40:00
+
+Doctor's Sotiris Silalis AMKA: 79456734558 vaccinations:
+Giannis Moustakas at 19/06/24 10:40:00
+Christos Staikos at 20/06/24 10:40:00
+
+----Τους ασφαλισμένους άνω των 60 ετών που δεν έχουν κλείσει ραντεβού για εμβολιασμό.----
+Anna Thanou AFM: 368094856 is over 60 and never made a reservation for vaccination
+Petros Kalogeras AFM: 465054856 is over 60 and never made a reservation for vaccination
