@@ -1,6 +1,5 @@
 package org.example;
 
-import java.time.LocalDate;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,21 +15,21 @@ public class Main {
 
 
         ArrayList<Insured> insureds = new ArrayList<>();
-        Insured insured1 =new Insured("171054858","82167","Kostas",new LocalDate(1944,Calendar.DECEMBER,4),"Papadopoulos","papadko@gmail.com");
-        Insured insured2 =new Insured("174564856","58356","Eleni",new LocalDate(2004,Calendar.JANUARY,8),"Avani","eleniav@gmail.com");
-        Insured insured3 =new Insured("123054856","75746","Maria",new LocalDate(1991,Calendar.JULY,8),"Davi","davimar@gmail.com");
-        Insured insured4 =new Insured("975644855","28907","Ioanna",new LocalDate(1934,Calendar.FEBRUARY,7),"Dagmati","iodag@gmail.com");
-        Insured insured5 =new Insured("458054856","46289","Leonidas",new LocalDate(2010,Calendar.JUNE,6),"Aggelidis","lagge@gmail.com");
-        Insured insured6 =new Insured("171058256","71356","Giorgos",new LocalDate(1946,Calendar.AUGUST,3),"Eugenidis","gioeuge@gmail.com");
-        Insured insured7 =new Insured("163784857","46456","Giannis",new LocalDate(1952,Calendar.DECEMBER,12),"Moustakas","moustakasg@gmail.com");
-        Insured insured8 =new Insured("128054856","98654","Christos",new LocalDate(2002,Calendar.JULY,15),"Staikos","christaikos@gmail.com");
-        Insured insured9 =new Insured("368094856","57432","Anna",new LocalDate(1932,Calendar.DECEMBER,18),"Thanou","annathanou@gmail.com");
-        Insured insured10 =new Insured("171026796","16845","Sofia",new LocalDate(1993,Calendar.JULY,22),"Okalidou","sogiako@gmail.com");
-        Insured insured11 =new Insured("465054856","98457","Petros",new LocalDate(1924,Calendar.AUGUST,26),"Kalogeras","petrosk@gmail.com");
-        Insured insured12 =new Insured("171069459","25785","Vasilis",new LocalDate(2016,Calendar.AUGUST,12),"Vlassis","vasvas@gmail.com");
-        Insured insured13 =new Insured("573984856","45356","Kostas",new LocalDate(1993,Calendar.DECEMBER,10),"Empeiros","empeirosko@gmail.com");
-        Insured insured14 =new Insured("171038566","75845","Maria",new LocalDate(1997,Calendar.AUGUST,9),"Papadopoulou","mariapapado@gmail.com");
-        Insured insured15 =new Insured("592560956","35980","Alexandros",new LocalDate(2003,Calendar.FEBRUARY,1),"Pasalidis","alexpas@gmail.com");
+        Insured insured1 =new Insured("171054858","8216745678","Kostas",new Date(1944,Calendar.DECEMBER,4),"Papadopoulos","papadko@gmail.com");
+        Insured insured2 =new Insured("174564856","3457858356","Eleni",new Date(2004,Calendar.JANUARY,8),"Avani","eleniav@gmail.com");
+        Insured insured3 =new Insured("123054856","7574675767","Maria",new Date(1991,Calendar.JULY,8),"Davi","davimar@gmail.com");
+        Insured insured4 =new Insured("975644855","5682764167","Ioanna",new Date(1934,Calendar.FEBRUARY,7),"Dagmati","iodag@gmail.com");
+        Insured insured5 =new Insured("458054856","4582167867","Leonidas",new Date(2010,Calendar.JUNE,6),"Aggelidis","lagge@gmail.com");
+        Insured insured6 =new Insured("171058256","8216756435","Giorgos",new Date(1946,Calendar.AUGUST,3),"Eugenidis","gioeuge@gmail.com");
+        Insured insured7 =new Insured("163784857","6558234167","Giannis",new Date(1952,Calendar.DECEMBER,12),"Moustakas","moustakasg@gmail.com");
+        Insured insured8 =new Insured("128054856","4546882167","Christos",new Date(2002,Calendar.JULY,15),"Staikos","christaikos@gmail.com");
+        Insured insured9 =new Insured("368094856","8986432167","Anna",new Date(1932,Calendar.DECEMBER,18),"Thanou","annathanou@gmail.com");
+        Insured insured10 =new Insured("171026796","821676780","Sofia",new Date(1993,Calendar.JULY,22),"Okalidou","sogiako@gmail.com");
+        Insured insured11 =new Insured("465054856","984662167","Petros",new Date(1924,Calendar.AUGUST,26),"Kalogeras","petrosk@gmail.com");
+        Insured insured12 =new Insured("171069459","356821967","Vasilis",new Date(2016,Calendar.AUGUST,12),"Vlassis","vasvas@gmail.com");
+        Insured insured13 =new Insured("573984856","488215667","Kostas",new Date(1993,Calendar.DECEMBER,10),"Empeiros","empeirosko@gmail.com");
+        Insured insured14 =new Insured("171038566","856862167","Maria",new Date(1997,Calendar.AUGUST,9),"Papadopoulou","mariapapado@gmail.com");
+        Insured insured15 =new Insured("592560956","845792167","Alexandros",new Date(2003,Calendar.FEBRUARY,1),"Pasalidis","alexpas@gmail.com");
 
         insureds.add(insured1);
         insureds.add(insured2);
@@ -51,10 +50,10 @@ public class Main {
         VaccinationCenter vc1 = new VaccinationCenter("VC123","EDW 13");
         VaccinationCenter vc2 = new VaccinationCenter("VC756","EKEI 56");
 
-        Doctor doctor1 = new Doctor(46982,"Axilleas","Paraskevopoulos");
-        Doctor doctor2 = new Doctor(56788,"Mihalis","Stravelas");
-        Doctor doctor3 = new Doctor(23890,"Parmenion","Kampanidis");
-        Doctor doctor4 = new Doctor(24764,"Sotiris","Silalis");
+        Doctor doctor1 = new Doctor("23456734502","Axilleas","Paraskevopoulos");
+        Doctor doctor2 = new Doctor("23356534502","Mihalis","Stravelas");
+        Doctor doctor3 = new Doctor("56786734502","Parmenion","Kampanidis");
+        Doctor doctor4 = new Doctor("79456734558","Sotiris","Silalis");
 
         Timeslot timeslot1=new Timeslot(new Date(24, Calendar.JUNE,1,10, 40),doctor1);
         Timeslot timeslot2=new Timeslot(new Date(24, Calendar.JUNE,2,10, 40),doctor1);
@@ -122,7 +121,7 @@ public class Main {
         System.out.println("Τους ασφαλισμένους άνω των 60 ετών που δεν έχουν κλείσει ραντεβού για εμβολιασμό.");
         for(Insured ins:insureds){
             if(ins.getVaccinationCoverage()==null && ins.getReservation()==null && Year.now().getValue()-ins.getBirthdate().getYear()>60){
-                System.out.println(ins.getName()+" "+ins.getSurname()+ " AFM: "+ins.getAfm()+" is over 60 and never made a reservation for vaccination");
+                 System.out.println(ins.getName()+" "+ins.getSurname()+ " AFM: "+ins.getAfm()+" is over 60 and never made a reservation for vaccination");
             }
         }
 

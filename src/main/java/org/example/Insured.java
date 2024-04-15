@@ -1,7 +1,6 @@
 package org.example;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -10,7 +9,7 @@ public class Insured {
     private String afm;
     private String amka;
     private String name;
-    private LocalDate birthdate;
+    private Date birthdate;
     private String surname;
     private String email;
     private Reservation reservation;
@@ -18,7 +17,7 @@ public class Insured {
     private Doctor doctor=null;
     private Vaccination vaccinationCoverage=null;
 
-    public Insured(String afm, String amka, String name, LocalDate birthdate, String surname, String email) {
+    public Insured(String afm, String amka, String name, Date birthdate, String surname, String email) {
         this.afm = afm;
         this.amka = amka;
         this.name = name;
@@ -31,12 +30,12 @@ public class Insured {
     public void selectTimeslot(Doctor d,Timeslot t){
         //αν ειναι διαθεσιμο το ταιμσλοτ αν δεν εχει ηδη ρεζερβειτιον αν ο γιατρος εχει μπει σε κεντρο
         if (d.ifSelectedTimeslotAvailable(t) && reservation==null && d.getVc()!=null) {
-            d.selectTheTimeslot(t);//δεσμευση του ταιμσλοτ
-            System.out.println("Insured "+name+" "+surname+" AMKA: "+amka+" made a reservation for "+t.getTimeslotDateAndTime());
-            reservation=new Reservation(this,t);
-            d.getVc().addReservation(reservation);//προσθηκη του ρεζερβειτον στο κεντρο που εχει δηλωθει ο γιατρος
-            vaccinationCenter=d.getVc();//το κεντρο που θα πρεπει να παει
-            doctor=d;
+               d.selectTheTimeslot(t);//δεσμευση του ταιμσλοτ
+               System.out.println("Insured "+name+" "+surname+" AMKA: "+amka+" made a reservation for "+t.getTimeslotDateAndTime());
+               reservation=new Reservation(this,t);
+               d.getVc().addReservation(reservation);//προσθηκη του ρεζερβειτον στο κεντρο που εχει δηλωθει ο γιατρος
+               vaccinationCenter=d.getVc();//το κεντρο που θα πρεπει να παει
+               doctor=d;
         } else if (reservation!=null) {
             System.out.println("Insured "+name+" "+surname+" AMKA: "+amka+" has a reservation, delete it first if you want to make a change");
         } else if (d.getVc()==null) {
@@ -97,7 +96,7 @@ public class Insured {
         return afm;
     }
 
-    public LocalDate getBirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 

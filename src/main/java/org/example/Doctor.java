@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Doctor {
-    private int amka;
+    private String amka;
     private String name;
     private String surname;
     private HashMap<Timeslot,Boolean> timeslots=new HashMap<>();
@@ -21,7 +21,7 @@ public class Doctor {
         return vc;
     }
 
-    public Doctor(int amka, String name, String surname) {
+    public Doctor(String amka, String name, String surname) {
         this.amka = amka;
         this.name = name;
         this.surname = surname;
@@ -30,10 +30,10 @@ public class Doctor {
     public void addTimeslot(Timeslot t){
         boolean bool=false;
         for(HashMap.Entry<Timeslot, Boolean> entry : timeslots.entrySet()) {
-            if(entry.getKey().getTimeslotDateAndTime().equals(t.getTimeslotDateAndTime())){
-                System.out.println("You have already added this timeslot: "+t.getTimeslotDateAndTime()+" to doctor "+name+" "+surname);
-                bool=true;
-            }
+             if(entry.getKey().getTimeslotDateAndTime().equals(t.getTimeslotDateAndTime())){
+                 System.out.println("You have already added this timeslot: "+t.getTimeslotDateAndTime()+" to doctor "+name+" "+surname);
+                 bool=true;
+             }
         }
         if(bool==false){
             timeslots.put(t,true);
