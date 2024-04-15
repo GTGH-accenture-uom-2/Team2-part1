@@ -1,9 +1,9 @@
 package org.example;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
 
 public class Insured {
     private String afm;
@@ -23,9 +23,16 @@ public class Insured {
         this.name = name;
         this.birthdate = birthdate;
         this.surname = surname;
-        this.email = email;
+        EmailValidator validator=EmailValidator.getInstance();//Validates the email dependency added (invalid email -> program stops)
+        if(validator.isValid(email)){
+            this.email = email;
+        }else{
+            System.out.println("**Wrong type of e-mail");
+            System.exit(0);
+        }
         reservation=null;
     }
+
     //Ασφαλισμενος κανει κρατηση ελευθερο ταιμσλοτ δηλωνοντας τον γιατρο και το ταιμσλοτ
     public void selectTimeslot(Doctor d,Timeslot t){
         //αν ειναι διαθεσιμο το ταιμσλοτ αν δεν εχει ηδη ρεζερβειτιον αν ο γιατρος εχει μπει σε κεντρο
@@ -39,9 +46,9 @@ public class Insured {
         } else if (reservation!=null) {
             System.out.println("Insured "+name+" "+surname+" AMKA: "+amka+" has a reservation, delete it first if you want to make a change");
         } else if (d.getVc()==null) {
-            System.out.println("Doctor "+d.getName()+" "+d.getSurname()+" isn't added in a vaccination center");
+            System.out.println("Doctor "+d.getName()+" "+d.getSurname()+" AMKA: "+d.getAmka()+" isn't added in a vaccination center");
         } else{
-            System.out.println("Doctor "+d.getName()+" "+d.getSurname()+" hasn't this timeslot available, choose a different timeslot");
+            System.out.println("Doctor "+d.getName()+" "+d.getSurname()+" AMKA: "+d.getAmka()+" hasn't this timeslot available, choose a different timeslot");
         }
     }
 
@@ -77,7 +84,7 @@ public class Insured {
             doctor=null;
             System.out.println(vaccinationCoverage.returnInfo());
         }else{
-            System.out.println("Insured "+name+" "+surname+" doesn't have a reservation");
+            System.out.println("Insured "+name+" "+surname+" AMKA: "+amka+" doesn't have a reservation");
         }
 
     }
@@ -86,9 +93,9 @@ public class Insured {
     public String haveVaccinationCoverage(){
 
         if(vaccinationCoverage==null){
-            return "Insured "+name+" "+surname+" doesn't have Vaccination Coverage, vaccinate first to get one!";
+            return "Insured "+name+" "+surname+" AMKA: "+amka+" doesn't have Vaccination Coverage, vaccinate first to get one!";
         }else{
-            return "Insured "+name+" "+surname+" has Vaccination Coverage " + vaccinationCoverage.returnInfo();
+            return "Insured "+name+" "+surname+" AMKA: "+amka+" has Vaccination Coverage " + vaccinationCoverage.returnInfo();
         }
     }
 
@@ -115,4 +122,6 @@ public class Insured {
     public String getSurname() {
         return surname;
     }
+
 }
+

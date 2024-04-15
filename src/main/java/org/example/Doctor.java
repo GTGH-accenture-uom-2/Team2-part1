@@ -40,6 +40,10 @@ public class Doctor {
         }
     }
 
+    public String getAmka() {
+        return amka;
+    }
+
     public String returnMyTimeslots(){
         String s="Doctor's "+name+" "+surname+" timeslots: \n";
         for(HashMap.Entry<Timeslot, Boolean> entry : timeslots.entrySet()){
@@ -50,14 +54,14 @@ public class Doctor {
             }
         }
         if(timeslots.size()==0){
-            return "Doctor "+name+" "+surname+" doesn't have timeslots";
+            return "Doctor "+name+" "+surname+" AMKA: "+amka+" doesn't have timeslots";
         }else{
             return s;
         }
     }
 
     public String returnMyAvailableTimeslots(){
-        String s="Doctor's "+name+" "+surname+" timeslots: \n";
+        String s="Doctor's "+name+" "+surname+" AMKA: "+amka+" timeslots: \n";
         for(HashMap.Entry<Timeslot, Boolean> entry : timeslots.entrySet()){
             if(entry.getValue()){
                 s+=entry.getKey().getTimeslotDateAndTime()+" is available +\n";
@@ -86,7 +90,7 @@ public class Doctor {
     }
 
     public String returnTheVaccinationsDone(){
-        String s="Doctor's "+name+" "+surname+" vaccinations:\n";
+        String s="Doctor's "+name+" "+surname+" AMKA: "+amka+" vaccinations:\n";
         for(Map.Entry<Insured, Timeslot> entry : vaccinationsDone.entrySet()){
             s+=entry.getKey().getName()+" "+entry.getKey().getSurname()+" at "+entry.getValue().getTimeslotDateAndTime()+"\n";
         }
@@ -115,6 +119,6 @@ public class Doctor {
     }
 
     public String reservationsPerVaccinationCenter(VaccinationCenter vc){
-        return "Doctor "+name+" "+surname+" searched for the reservations of the vaccination center with code"+vc.getCode()+"\n"+vc.returnAllMyReservations();
+        return "Doctor "+name+" "+surname+" AMKA: "+amka+" searched for the reservations of the vaccination center with code"+vc.getCode()+"\n"+vc.returnAllMyReservations();
     }
 }
