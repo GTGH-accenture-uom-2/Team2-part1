@@ -1,5 +1,8 @@
 package org.example;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -123,6 +126,46 @@ public class Main {
             if(ins.getVaccinationCoverage()==null && ins.getReservation()==null && Year.now().getValue()-ins.getBirthdate().getYear()>60){
                  System.out.println(ins.getName()+" "+ins.getSurname()+ " AFM: "+ins.getAfm()+" is over 60 and never made a reservation for vaccination");
             }
+        }
+
+        try {
+            File myObj = new File("vaccination-results.txt");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+
+
+            FileWriter myWriter = new FileWriter("vaccination-results.txt");
+            myWriter.write("----Τα επικείμενα ραντεβού για κάθε εμβολιαστικό κέντρο----\n");
+            myWriter.write(vc1.returnAllMyReservations()+"\n");
+            myWriter.write(vc2.returnAllMyReservations()+"\n");
+
+            myWriter.write("----Τις ελεύθερες χρονικές θυρίδες κάθε εμβολιαστικού κέντρου----\n");
+            myWriter.write(vc1.availableTimeslotsOfVc()+"\n");
+            myWriter.write(vc2.availableTimeslotsOfVc()+"\n");
+
+
+            myWriter.write("----Τους εμβολιασμούς (ημερομηνία εμβολιασμού και ονοματεπώνυμο ασφαλισμένου) που " +
+                    "πραγματοποίησε κάθε γιατρός, για όλους τους γιατρούς.----\n");
+            myWriter.write(doctor1.returnTheVaccinationsDone()+"\n");
+            myWriter.write(doctor2.returnTheVaccinationsDone()+"\n");
+            myWriter.write(doctor3.returnTheVaccinationsDone()+"\n");
+            myWriter.write(doctor4.returnTheVaccinationsDone()+"\n");
+
+            myWriter.write("----Τους ασφαλισμένους άνω των 60 ετών που δεν έχουν κλείσει ραντεβού για εμβολιασμό.----\n");
+            for(Insured ins:insureds){
+                if(ins.getVaccinationCoverage()==null && ins.getReservation()==null && Year.now().getValue()-ins.getBirthdate().getYear()>60){
+                    myWriter.write(ins.getName()+" "+ins.getSurname()+ " AFM: "+ins.getAfm()+" is over 60 and never made a reservation for vaccination\n");
+                }
+            }
+
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
 
 
