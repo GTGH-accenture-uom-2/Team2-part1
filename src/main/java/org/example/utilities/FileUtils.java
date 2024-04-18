@@ -15,7 +15,7 @@ import static org.example.utilities.Constants.OUTPUT_FILE_NAME;
 public class FileUtils {
     public static void printResults(List<VaccinationCenter> vaccinationCenters, List<Doctor> doctors, List<Insured> insureds) {
         try {
-            File myObj = new File("vaccination-results.txt");
+            File myObj = new File(OUTPUT_FILE_NAME);
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
             } else {
@@ -23,7 +23,7 @@ public class FileUtils {
             }
 
 
-            FileWriter myWriter = new FileWriter("vaccination-results.txt");
+            FileWriter myWriter = new FileWriter(OUTPUT_FILE_NAME);
             myWriter.write("----Reservations for each vaccination center----\n");
             for (VaccinationCenter vc : vaccinationCenters) {
                 myWriter.write(vc.returnAllMyReservations() + "\n");
